@@ -7,6 +7,7 @@ convertor = {"seconds": user_input % 60, "minutes": (user_input // 60) % 60, "ho
              "days": user_input // 86400}
 
 days = convertor["days"]
+
 if days % 10 == 1 and days % 100 != 11:
     print(f"{days} день, {convertor["hours"]:02d}:{convertor["minutes"]:02d}:{convertor["seconds"]:02d}")
 elif 2 <= days % 10 <= 4 and (days % 100 < 10 or days % 100 >= 20):
