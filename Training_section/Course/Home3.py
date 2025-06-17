@@ -1,8 +1,11 @@
+# Програма має виконувати прості математичні дії (+, -, *, /).
+# Користувачеві пропонується почерзі ввести числа та дію над цими числами, а програма, виходячи з дії, обчислює та друкує результат
+
 print("Input first number:")
 first_number = float(input())
 print("Input second number:")
 second_number = float(input())
-print("Input sign:")
+print("Input sign (+,-,*,/):")
 sign = input()
 
 if sign == "+":
