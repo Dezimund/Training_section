@@ -27,12 +27,17 @@ elif user_input[0].isdigit():
     print(False)
 elif any(c.isupper() for c in user_input):
     print(False)
-elif any(c in string.punctuation.replace('_', '') for c in user_input):
+elif not all(c.isalnum() or c == '_' for c in user_input):
     print(False)
-elif user_input in keyword.kwlist:
+elif user_input in keyword.kwlist and len(user_input.split('_')) == 1:
+    print(False)
+elif user_input.count('_') > 1 and not any(c.isalpha() for c in user_input):
     print(False)
 else:
     print(True)
+
+
+
 
 
 
