@@ -14,7 +14,6 @@
 #
 # Приклади імен змінних та результат перевірки (=> на друк виводити не потрібно :))
 
-import string
 import keyword
 
 user_input = input("Enter a string: ")
