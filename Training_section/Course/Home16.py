@@ -10,7 +10,7 @@
 
 def correct_sentence(text):
     if text[0].islower():
-        text = text.capitalize()
+        text = text[0].upper() + text[1:]
     if not text[-1] == '.':
         text = text + '.'
     return text
@@ -19,5 +19,6 @@ print (correct_sentence("greetings, friends"))
 print (correct_sentence("hello"))
 print (correct_sentence("Greetings. Friends"))
 print (correct_sentence("Greetings, friends."))
-print (correct_sentence("greetings, friends."))
+print (correct_sentence("greetinGS, friends."))
+print (correct_sentence("GreetinGS, friends"))
 
