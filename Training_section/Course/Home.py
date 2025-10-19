@@ -17,7 +17,7 @@
 # Створюйте рішення, виходячи з того, що число ЗАВЖДИ 4-х значне.
 
 print("input 4 numbers")
-numbers = int (input)
+numbers = int (input())
 
 number1 = numbers // 1000
 number2 = numbers // 100 % 10

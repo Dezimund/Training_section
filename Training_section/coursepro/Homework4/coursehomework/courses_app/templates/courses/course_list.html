@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Course list</title>
+    </head>
+    <body>
+        <h1>Courses</h1>
+        <ul>
+            {% for course in courses %}
+                <li><b>{{ course.title }}</b>: {{ course.info }}</li>
+            {% empty %}
+                <li>No courses</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'create_course' %}">Create new course</a>
+    </body>
+</html>

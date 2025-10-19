@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="eng">
+     <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Add an event</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+     </head>
+      <body>
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">Add new event </h1>
+            <a href="{{ url_for('app.add_event') }}" class="btn btn-primary mb-3">Add Event</a>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST">
+                {{ form.hidden_tag() }}
+<!--                    {{ form.title.label }} {{ form.title() }}-->
+<!--                    {{ form.description.label }} {{ form.description() }}-->
+<!--                    {{ form.date.label }} {{ form.date() }}-->
+                <div class='mb-3'>
+                    <label for="title" class="form-lable">Name event</label>
+                    <input id="title" maxlength="30" name="title" type="text" value="" class="form-control">
+                </div>
+                <div class='mb-3'>
+                    <label for="description" class="form-lable">Description</label>
+                    <textarea class="form-control" id="description" maxlength="500" rows="4" name="description"></textarea>
+                </div>
+                <div class='mb-3'>
+                    <label for="date" class="form-lable">Date and time</label>
+                    <input type="datetime-local" id="date" class="form-control" required name="date">
+                </div>
+                <button type = "submit" class="btn btn-primary">Add</button>
+                <a href="{{ url_for('app.index') }}" class = "btn btn-secondary">Back</a>
+            </form>
+        </div>
+    </body>
+</html>
